@@ -1,10 +1,33 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
   <router-view/>
 </template>
+
+<script>
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/js/bootstrap.js'
+import 'bootstrap-icons/font/bootstrap-icons.css'
+import {
+  auth,
+  onAuthStateChanged
+} from "@/utils/firebase";
+export default {
+
+beforeCreate(){
+  onAuthStateChanged(auth, (user) => {
+  if (user) {
+    console.log("logueado")
+    localStorage.setItem("user", JSON.stringify(user))
+    this.$router.push("/stores")
+  } else {
+    console.log("deslogueado")
+    localStorage.removeItem("user")
+    this.$router.push("/")
+  }
+});
+}
+  
+}
+</script>
 
 <style lang="scss">
 #app {
