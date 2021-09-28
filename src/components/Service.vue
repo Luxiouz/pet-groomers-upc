@@ -1,8 +1,5 @@
 <template>
-  <div
-  class="cursorBtn"
-    @click="setService()"
-  >
+  <div class="cursorBtn" @click="setService()">
     <div class="card mb-3" style="max-width: 540px">
       <div class="row g-0">
         <div class="card-body">
@@ -17,11 +14,13 @@
             </div>
             <div class="col-8 col-md-10 p-0 px-2 mb-0">
               <h5 class="card-title">{{ service.name }}</h5>
-              <p class="card-text text-justify desc mb-1 text-muted">
-                {{ service.description }}
-              </p>
-              <p class="card-text mb-1">S/.{{ service.price }}.00</p>
+               <p class="card-text mb-1">S/.{{ service.price }}.00</p>
             </div>
+          </div>
+          <div class="row mt-2">
+            <p class="card-text text-justify desc mb-1 text-muted">
+              {{ service.description }}
+            </p>
           </div>
           <div v-if="false" class="row mt-1">
             <p class="card-text text-left mb-0" style="text-align: left">
@@ -38,7 +37,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions } from "vuex";
 
 export default {
   name: "Service",
@@ -49,11 +48,11 @@ export default {
     service: {},
   },
   methods: {
-    ...mapActions(['selectService']),
-    setService(){
+    ...mapActions(["selectService"]),
+    setService() {
       this.selectService(this.service);
-      this.$router.push('/services-detail')
-    }
+      this.$router.push("/services-detail");
+    },
   },
 };
 </script>
