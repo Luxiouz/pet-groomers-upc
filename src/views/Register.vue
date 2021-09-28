@@ -18,6 +18,7 @@
               class="form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
+              minlength="3"
               maxlength="50"
               v-model.trim="username"
               required
@@ -32,9 +33,9 @@
               type="text"
               class="form-control"
               id="exampleInputFirstName"
-              maxlength="100"
               v-model.trim="firstName"
-              pattern="^[A-Za-z\s]+"
+              maxlength="40"
+              pattern="^[A-Za-z\s]{2,40}"
               required
             />
           </div>
@@ -46,9 +47,9 @@
               type="text"
               class="form-control"
               id="exampleInputLastName"
-              maxlength="100"
               v-model.trim="lastName"
-              pattern="^[A-Za-z\s]+"
+              maxlength="40"
+              pattern="^[A-Za-z\s]{2,40}"
               required
             />
           </div>
@@ -77,8 +78,8 @@
               class="form-control"
               id="exampleInputAddress"
               v-model.trim="address"
-              maxlength="200"
-              pattern="^.+"
+              maxlength="80"
+              pattern="^.{2,80}"
               required
             />
           </div>
@@ -106,6 +107,8 @@
               type="password"
               class="form-control"
               id="exampleInputPassword1"
+              minlength="6"
+              maxlength="20"
               v-model.trim="password"
               required
             />
@@ -117,6 +120,8 @@
             <input
               type="password"
               class="form-control"
+              minlength="6"
+              maxlength="20"
               id="exampleInputPassword2"
               v-model.trim="passwordCheck"
               required
