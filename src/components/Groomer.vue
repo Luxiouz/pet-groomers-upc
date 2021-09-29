@@ -50,8 +50,8 @@ import { mapState } from 'vuex';
           </p>
         </div>
       </div>
-      <div class="row justify-content-end">
-        <button class="col-sm-6 btn btn-warning btn-sm" @click="openServices()">Ver Servicios</button>
+      <div class="row justify-content-sm-end">
+        <button class="col-sm-6 btn btn-warning btn-sm mx-2" @click="openServices()">Ver Servicios</button>
       </div>
       <div class="row mt-3"></div>
     </div>
